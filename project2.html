@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My To-Do List</title>
+        <link rel="stylesheet" href="project2.css">
+    </head>
+    <body>
+
+        <div class="todo-container">
+
+            <header class="header">
+                <div>
+                    <h1>My Tasks</h1>
+                    <p>Organize your day, one task at a time.</p>
+                </div>
+                <div class="task-icon">✓</div>
+            </header>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?">
+                <button id="addBtn">+ Add Task</button>
+            </div>
+
+            <div class="list-header">
+                <h2>Today's Tasks</h2>
+                <span class="task-badge" id="taskCount">0 tasks</span>
+            </div>
+
+            <ul id="taskList">
+                <li id="massage">
+                    Your tasks will appear here.
+                </li>
+            </ul>
+
+            <footer>
+                <span>Stay focused. Get things done.</span>
+            </footer>
+
+        </div>
+
+        <script>
+            
+        let inpt=document.querySelector("#taskInput");
+        
+        let mass=""
+        inpt.addEventListener("input",function(dets){
+             mass=dets.value        })
+        let but=document.querySelector("#addBtn");
+            let list=document.querySelector("#message")
+        let item = document.createElement("li");
+        but.addEventListener("click",function(){
+            
+            item.textContent = mass;
+
+            // list.appendChild(item);
+
+            inpt.value = "";
+        mass = "";
+        })
+    </script>
+    </body>
+</html>
